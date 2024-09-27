@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Todo List</h1>
+    <ul class="todo-list">
+      <li *ngFor="let todo of todos" [ngClass]="{ completed: todo.completed }">
+        <div class="todo-item">
+          <div>
+            <h3>{{ todo.title }}</h3>
+            <p>{{ todo.description }}</p>
+            <p class="due-date">Due: {{ todo.dueDate }}</p>
+          </div>
+          <div class="buttons">
+            <button class="delete-button" (click)="deleteTodo(todo._id!)">Delete</button>
+            <button class="complete-button" (click)="markAsCompleted(todo)">Toggle Complete</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <button class="add-button" (click)="addTodo()">Add Todo</button>
+  </div>
+  

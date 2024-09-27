@@ -1,0 +1,10 @@
+<div>
+    <h1>Todo List</h1>
+    <ul>
+      <li *ngFor="let todo of todos">
+        {{ todo.title }}
+        <button (click)="deleteTodo(todo.title)">Delete</button>
+      </li>
+    </ul>
+    <button (click)="addTodo()">Add Todo</button>
+  </div>
